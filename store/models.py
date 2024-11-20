@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 #https://stackoverflow.com/questions/74600909/how-to-show-avaliable-sizes-of-clothes-on-the-form-django
-class Category(models.model):
+class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
 
@@ -17,11 +17,11 @@ class Category(models.model):
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    brand = models.CharField(max_length=200, ddefault="un-brabded")
+    brand = models.CharField(max_length=200, default="un-brabded")
     description = models.TextField(blank=True)
     slug = models.SlugField(max_length=250, unique=True)
     price = models.DecimalField(max_digits = 6, decimal_places = 2)
-    image = models.FileField(upload_to='images/', default="default.png")
+    image = models.FileField(upload_to='images/', default="images/default.png")
 
     class Meta:
         verbose_name_plural = "products"
