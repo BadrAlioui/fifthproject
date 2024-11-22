@@ -8,3 +8,9 @@ body {
 img {
     height: 310.635px;
 }
+
+#logo {
+    padding: 0;
+    margin: 0;
+    height: 50px;
+}

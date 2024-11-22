@@ -18,7 +18,12 @@
                 data-bs-theme="dark"
             >
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'store' %}">Navbar</a>
+                    <a class="navbar-brand" href="{% url 'store' %}"
+                        ><img
+                            id="logo"
+                            src="{% static 'media/images/logo_b.png' %}"
+                            alt=""
+                    /></a>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -31,7 +36,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarColor01">
-                        <ul class="navbar-nav me-auto">
+                        <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 <a
                                     class="nav-link active"
@@ -59,7 +64,7 @@
                                     role="button"
                                     aria-haspopup="true"
                                     aria-expanded="false"
-                                    >Dropdown</a
+                                    >Categories</a
                                 >
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="#">Action</a>
@@ -76,19 +81,6 @@
                                 </div>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input
-                                class="form-control me-sm-2"
-                                type="search"
-                                placeholder="Search"
-                            />
-                            <button
-                                class="btn btn-secondary my-2 my-sm-0"
-                                type="submit"
-                            >
-                                Search
-                            </button>
-                        </form>
                     </div>
                 </div>
             </nav>
