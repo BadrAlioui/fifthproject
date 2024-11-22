@@ -17,7 +17,7 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    brand = models.CharField(max_length=200, default="un-brabded")
+    brand = models.CharField(max_length=200, default="un-branded")
     description = models.TextField(blank=True)
     slug = models.SlugField(max_length=250, unique=True)
     price = models.DecimalField(max_digits = 6, decimal_places = 2)
