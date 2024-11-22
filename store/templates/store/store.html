@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %}{% block content %}
 
 <h1>Store Page</h1>
 <div class="album py-5 bg-light">
@@ -9,10 +9,14 @@
 
         <br />
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+            {% for product in products %}
             <div class="col">
-                {% for product in products %}
                 <div class="card shadow-sm">
-                    <img src="{{product.image.url}}" alt="{{product.title}}" />
+                    <img
+                        class="image-product"
+                        src="{{product.image.url}}"
+                        alt="{{product.title}}"
+                    />
                     <div class="card-body">
                         <p class="card-text">
                             <a class="text-info text-decoration-none" href=""
@@ -26,8 +30,8 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
