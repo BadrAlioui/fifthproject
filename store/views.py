@@ -9,7 +9,7 @@ def store(request):
     return render(request, 'store/store.html', {'products':products})
 
 def product(request, pk):
-    product = Product.objects.get(pk=id)
+    product = Product.objects.get(id=pk)
     return render(request, 'store/product.html', {'product':product})
 
 def createProduct(request):
@@ -17,6 +17,7 @@ def createProduct(request):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
+            form.save()
             return redirect('store')
     context = {'form': form}
     return render(request, "store/store-form.html", context)
