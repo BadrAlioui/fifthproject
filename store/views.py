@@ -8,8 +8,11 @@ def store(request):
 
     return render(request, 'store/store.html', {'products':products})
 
-def product(request, pk):
-    product = Product.objects.get(id=pk)
+def product(request, slug):
+    try:
+        product = Product.objects.get(slug=slug)
+    except Product.DoesNotExist:
+        return render(request, '404.html')
     return render(request, 'store/product.html', {'product':product})
 
 def createProduct(request):
