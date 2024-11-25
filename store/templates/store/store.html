@@ -29,6 +29,12 @@
                             class="d-flex justify-content-between align-items-center"
                         >
                             <h5>${{product.price}}</h5>
+                            <a href="{% url 'update-product' product.slug %}"
+                                >Edit product</a
+                            >
+                            <a href="{% url 'delete-product' product.slug %}"
+                                >Delete product</a
+                            >
                         </div>
                     </div>
                 </div>
